@@ -17,8 +17,8 @@ class Article(db.Model, SerializerMixin):
     content = db.Column(db.String)
     preview = db.Column(db.String)
     minutes_to_read = db.Column(db.Integer)
-    is_member_only = db.Column(db.Boolean, default=False)
     date = db.Column(db.DateTime, server_default=db.func.now())
+    is_member_only = db.Column(db.Boolean, default=False)
 
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
 
